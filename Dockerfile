@@ -9,9 +9,9 @@ RUN apt-get update && apt-get -y install sudo gawk wget git-core diffstat unzip 
     dosfstools e2fsprogs gawk mtools parted locales zip
 
 RUN groupadd -g 1000 sysadmin \
-            && useradd -u 1000 -g sysadmin -d /home/sysadmin/yocto_downloads sysadmin \
-            && mkdir /home/sysadmin/yocto_downloads \
-            && chown -R sysadmin:sysadmin /home/sysadmin/yocto_downloads
+            && useradd -u 1000 -g sysadmin -d /home/ubuntu/sysadmin/yocto_downloads sysadmin \
+            && mkdir /home/ubuntu/sysadmin/yocto_downloads \
+            && chown -R sysadmin:sysadmin /home/ubuntu/sysadmin/yocto_downloads
 
 RUN echo '%sysadmin ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
@@ -21,4 +21,4 @@ ENV LANG en_US.UTF-8
 
 USER sysadmin
 
-WORKDIR /home/sysadmin/yocto_downloads
+WORKDIR /home/ubuntu/sysadmin/yocto_downloads
